@@ -1,0 +1,233 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #a2c0d7;
+    color: #001d39;
+    line-height: 1.6;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: #0b2864;
+    color: rgb(0, 0, 0);
+}
+
+header h1 {
+    margin: 0 0 1rem;
+    font-size: 1.6rem;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+.avatar img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 0.3rem 0.7rem;
+}
+
+nav a:hover {
+    background: #3d7a8c;
+    border-radius: 0.3rem;
+}
+
+/* Main */
+
+main {
+    width: 90%;
+    max-width: 75rem;
+    margin: 2rem auto;
+}
+
+/* Profile */
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: white;
+    border-left: 0.4rem solid #1f4e5f;
+    border-radius: 0.5rem;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background: #d8edf2;
+    color: #1f4e5f;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.profile h2 {
+    margin: 0;
+}
+
+.profile p {
+    margin: 0.4rem 0;
+    color: #68777d;
+}
+
+/* Button */
+
+button {
+    padding: 0.7rem 1.3rem;
+    border: none;
+    border-radius: 0.3rem;
+    background: #1f4e5f;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #163b48;
+}
+
+/* Skills */
+
+.skills {
+    margin-top: 2rem;
+}
+
+.skills h2 {
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.skill-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.skill-card {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 0.5rem;
+    border-top: 0.25rem solid #1f4e5f;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-0.3rem);
+}
+
+.skill-card h3 {
+    margin-top: 0;
+    color: #1f4e5f;
+}
+
+.skill-card p {
+    color: #68777d;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 2rem;
+    padding: 1.2rem;
+    text-align: center;
+    background: #1f4e5f;
+    color: white;
+}
+
+
+/* =========================
+   TABLET - 768px
+   ========================= */
+
+@media (min-width: 48rem) {
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        margin: 0;
+    }
+
+    nav {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .profile {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .profile-info {
+        flex-direction: row;
+        gap: 1.5rem;
+        text-align: left;
+    }
+
+    .avatar {
+        margin: 0;
+    }
+
+    .skill-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================
+   DESKTOP - 1200px
+   ========================= */
+
+@media (min-width: 75rem) {
+
+    header {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    main {
+        margin-top: 3rem;
+    }
+
+    .profile {
+        padding: 2.5rem;
+    }
+
+    .skill-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
