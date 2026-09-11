@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Week 2 Day 1 Advanced CSS project">
+
+    <title>Advanced CSS</title>
+
+    <link rel="stylesheet" href="advanced-styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">
+            Advanced CSS
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+
+        <span class="badge">
+            Week 2 - Day 1
+        </span>
+
+        <h1>
+            Advanced CSS Techniques
+        </h1>
+
+        <p>
+            Explore CSS custom properties, animations,
+            pseudo-elements and responsive design.
+        </p>
+
+        <button id="themeButton">
+            Switch to Light Theme
+        </button>
+
+    </section>
+
+
+    <!-- Features -->
+    <section id="features" class="container">
+
+        <h2>
+            Advanced CSS Features
+        </h2>
+
+        <div class="cards">
+
+            <!-- Custom Properties -->
+            <article class="card">
+
+                <div class="icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Custom Properties
+                </h3>
+
+                <p>
+                    CSS variables allow reusable colors,
+                    spacing and design values.
+                </p>
+
+            </article>
+
+
+            <!-- Spinner -->
+            <article class="card">
+
+                <div class="spinner"></div>
+
+                <h3>
+                    Loading Animation
+                </h3>
+
+                <p>
+                    A CSS-only animated loading spinner.
+                </p>
+
+            </article>
+
+
+            <!-- Progress -->
+            <article class="card">
+
+                <h3>
+                    Progress Bar
+                </h3>
+
+                <div class="progress">
+
+                    <div class="progress-fill"></div>
+
+                </div>
+
+                <p>
+                    Current Progress: 75%
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- Pseudo Elements -->
+    <section id="about" class="container">
+
+        <h2>
+            Pseudo-elements
+        </h2>
+
+        <div class="decorated-box">
+
+            <h3>
+                ::before and ::after
+            </h3>
+
+            <p>
+                These pseudo-elements add decorative
+                content without extra HTML elements.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            Week 2 Day 1 - CSS Advanced
+        </p>
+
+    </footer>
+
+
+    <!-- Theme Switcher -->
+    <script>
+
+        const themeButton =
+            document.getElementById("themeButton");
+
+        themeButton.addEventListener("click", function () {
+
+            document.body.classList.toggle("light-theme");
+
+            if (
+                document.body.classList.contains("light-theme")
+            ) {
+
+                themeButton.textContent =
+                    "Switch to Dark Theme";
+
+            } else {
+
+                themeButton.textContent =
+                    "Switch to Light Theme";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
