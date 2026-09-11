@@ -1,0 +1,663 @@
+/* =========================================
+   WEEK 2 - DAY 1
+   ADVANCED CSS
+   ========================================= */
+
+
+/* =========================================
+   1. CSS CUSTOM PROPERTIES
+   ========================================= */
+
+:root {
+    --bg-color: #101827;
+    --card-color: #1c2636;
+    --primary-color: #4f9cf9;
+    --secondary-color: #8b5cf6;
+    --text-color: #f8fafc;
+    --muted-color: #a7b0c0;
+    --border-color: #334155;
+
+    --radius: 12px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   2. LIGHT THEME
+   ========================================= */
+
+.light-theme {
+    --bg-color: #f1f5f9;
+    --card-color: #ffffff;
+    --primary-color: #2563eb;
+    --secondary-color: #7c3aed;
+    --text-color: #111827;
+    --muted-color: #475569;
+    --border-color: #cbd5e1;
+
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================
+   3. RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   4. SMOOTH SCROLLING
+   ========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =========================================
+   5. BODY
+   ========================================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease;
+}
+
+
+/* =========================================
+   6. NAVIGATION
+   ========================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 8%;
+
+    background-color: var(--card-color);
+    border-bottom: 1px solid var(--border-color);
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+
+.nav-links a {
+    position: relative;
+
+    color: var(--text-color);
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+
+/* =========================================
+   NAV LINK PSEUDO-ELEMENT
+   ========================================= */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--primary-color);
+
+    transition: width 0.3s ease;
+}
+
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   7. HERO SECTION
+   ========================================= */
+
+.hero {
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+
+.badge {
+    display: inline-block;
+
+    padding: 7px 16px;
+
+    background-color: var(--primary-color);
+    color: #ffffff;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    animation: fadeIn 1s ease;
+}
+
+
+.hero h1 {
+    position: relative;
+
+    margin: 20px 0 15px;
+
+    font-size: clamp(32px, 6vw, 52px);
+
+    animation: slideUp 0.8s ease;
+}
+
+
+/* =========================================
+   HERO TITLE ::AFTER
+   ========================================= */
+
+.hero h1::after {
+    content: "";
+
+    display: block;
+
+    width: 80px;
+    height: 4px;
+
+    margin: 12px auto 0;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    border-radius: 5px;
+}
+
+
+.hero p {
+    max-width: 650px;
+
+    color: var(--muted-color);
+
+    font-size: 18px;
+
+    animation: fadeIn 1.2s ease;
+}
+
+
+/* =========================================
+   8. THEME BUTTON
+   ========================================= */
+
+#themeButton {
+    margin-top: 25px;
+
+    padding: 12px 24px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: var(--primary-color);
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#themeButton:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(79, 156, 249, 0.35);
+}
+
+
+/* =========================================
+   9. CONTAINER
+   ========================================= */
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+
+    margin: 70px auto;
+}
+
+
+.container > h2 {
+    margin-bottom: 35px;
+
+    text-align: center;
+
+    font-size: 30px;
+}
+
+
+/* =========================================
+   10. CARDS
+   ========================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.card {
+    position: relative;
+
+    padding: 30px;
+
+    background-color: var(--card-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================
+   CARD ::BEFORE
+   ========================================= */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+}
+
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow);
+
+    border-color: var(--primary-color);
+}
+
+
+.card h3 {
+    margin: 15px 0;
+
+    color: var(--primary-color);
+}
+
+
+.card p {
+    color: var(--muted-color);
+}
+
+
+/* =========================================
+   11. ICON ANIMATION
+   ========================================= */
+
+.icon {
+    font-size: 42px;
+
+    animation:
+        floating 2s ease-in-out infinite;
+}
+
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   12. LOADING SPINNER
+   ========================================= */
+
+.spinner {
+    width: 50px;
+    height: 50px;
+
+    margin: 10px auto 20px;
+
+    border: 5px solid var(--border-color);
+
+    border-top-color: var(--primary-color);
+
+    border-radius: 50%;
+
+    animation:
+        spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   13. PROGRESS BAR
+   ========================================= */
+
+.progress {
+    width: 100%;
+    height: 14px;
+
+    margin: 25px 0 10px;
+
+    background-color: var(--border-color);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.progress-fill {
+    width: 75%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    border-radius: 20px;
+
+    animation:
+        progressAnimation 2s ease-out;
+}
+
+
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 75%;
+    }
+}
+
+
+/* =========================================
+   14. PSEUDO-ELEMENT DEMO
+   ========================================= */
+
+.decorated-box {
+    position: relative;
+
+    padding: 45px;
+
+    background-color: var(--card-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius);
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+
+/* LEFT DECORATION */
+
+.decorated-box::before {
+    content: "★";
+
+    position: absolute;
+
+    top: 15px;
+    left: 20px;
+
+    font-size: 25px;
+
+    color: var(--primary-color);
+}
+
+
+/* RIGHT DECORATION */
+
+.decorated-box::after {
+    content: "";
+
+    position: absolute;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 14px;
+    height: 14px;
+
+    background-color: var(--secondary-color);
+
+    border-radius: 50%;
+
+    animation:
+        pulse 1.5s ease-in-out infinite;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   15. FOOTER
+   ========================================= */
+
+footer {
+    margin-top: 80px;
+
+    padding: 25px;
+
+    background-color: var(--card-color);
+
+    border-top: 1px solid var(--border-color);
+
+    text-align: center;
+
+    color: var(--muted-color);
+}
+
+
+/* =========================================
+   16. RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+
+    .nav-links {
+        gap: 15px;
+    }
+
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hero {
+        min-height: 65vh;
+    }
+
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    .container {
+        width: 90%;
+    }
+}
+
+
+/* =========================================
+   17. SMALL MOBILE DEVICES
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+
+    .card {
+        padding: 25px 20px;
+    }
+
+
+    .decorated-box {
+        padding: 35px 25px;
+    }
+}
+
+
+/* =========================================
+   18. ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================
+   END OF CSS
+   ========================================= */
