@@ -1,0 +1,440 @@
+/* =========================================
+   WEEK 2 - DAY 2
+   RESPONSIVE DESIGN
+   ========================================= */
+
+/* ---------- Base Styles ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background: #fdfeff;
+    color: #1f2937;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #03014d;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar {
+    min-height: 64px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    /* Flexbox */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.nav-links a {
+    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+
+/* ---------- Hero Section ---------- */
+
+.hero {
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #847fde,
+        #dbeafe
+    );
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-label,
+.section-label {
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #2563eb;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+.hero-text {
+    margin: 0 auto 30px;
+    max-width: 650px;
+    color: #786b6b;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: #746666;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.hero-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Section Heading ---------- */
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 12px;
+    font-size: 1.9rem;
+}
+
+.section-heading > p:last-child {
+    color: #56616d;
+}
+
+
+/* ---------- Features ---------- */
+
+.features-section {
+    background: #e1aefb;
+}
+
+.features-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    /* CSS Grid */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.feature-card {
+    padding: 25px;
+    background: #78b4f5;
+
+    border: 1px solid #3f4553;
+    border-radius: 12px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.feature-card p {
+    color: #886d6d;
+}
+
+
+/* ---------- Testimonials ---------- */
+
+.testimonials-section {
+    background: #5c7293;
+}
+
+.testimonials {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    /* Flexbox */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.testimonial {
+    padding: 25px;
+    background: #f1dda6;
+
+    border-radius: 12px;
+    border: 1px solid #4b505a;
+}
+
+.testimonial > p {
+    margin-bottom: 20px;
+    color: #5c4949;
+    font-style: italic;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #626504;
+    color: #523a3a;
+
+    font-weight: 700;
+}
+
+.person h3 {
+    font-size: 1rem;
+}
+
+.person span {
+    color: #636a75;
+    font-size: 0.85rem;
+}
+
+
+/* ---------- Footer ---------- */
+
+.footer {
+    padding: 40px 20px;
+
+    background: #102554;
+    color: #a48787;
+
+    text-align: center;
+}
+
+.footer h2 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #aec6ea;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.85rem;
+}
+
+
+/* =========================================
+   320px BREAKPOINT
+   Small Mobile
+   ========================================= */
+
+@media (min-width: 320px) {
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+}
+
+
+/* =========================================
+   768px BREAKPOINT
+   Tablet
+   ========================================= */
+
+@media (min-width: 768px) {
+
+    section {
+        padding: 80px 40px;
+    }
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        min-height: 72px;
+    }
+
+    .nav-links {
+        gap: 24px;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    /* CSS Grid changes to 2 columns */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Flexbox changes testimonials to a row */
+    .testimonials {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .testimonial {
+        flex: 1;
+    }
+}
+
+
+/* =========================================
+   1024px BREAKPOINT
+   Desktop
+   ========================================= */
+
+@media (min-width: 1024px) {
+
+    section {
+        padding: 100px 60px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero-text {
+        font-size: 1.1rem;
+    }
+
+    /* Four feature columns */
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .feature-card {
+        padding: 30px;
+    }
+}
+
+
+/* =========================================
+   1440px BREAKPOINT
+   Large Desktop
+   ========================================= */
+
+@media (min-width: 1440px) {
+
+    .navbar {
+        max-width: 1320px;
+    }
+
+    .hero-content {
+        max-width: 950px;
+    }
+
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+
+    .features-grid,
+    .testimonials {
+        max-width: 1320px;
+    }
+}
+
+
+/* =========================================
+   Accessibility
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
